@@ -37,6 +37,8 @@ public class MainActivityFragment extends Fragment implements TextWatcher {
 
     @Override
     public void onDestroy() {
+        super.onDestroy();
+
         if (textToSpeech != null) {
             textToSpeech.shutdown();
             textToSpeech = null;
