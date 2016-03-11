@@ -81,7 +81,7 @@ public class MainActivityFragment extends Fragment implements TextWatcher {
             toSpeak.add(lastChar);
         }
 
-        // FIXME: fullUpdate should really be current word
+        // FIXME: fullUpdate should really be the current word
         CharSequence fullUpdate = s.subSequence(start, start + count);
 
         toSpeak.add(fullUpdate);
@@ -93,13 +93,18 @@ public class MainActivityFragment extends Fragment implements TextWatcher {
         CharSequence lastPhrase = null;
         int queueMode = TextToSpeech.QUEUE_FLUSH;
         for (CharSequence phrase: toSpeak) {
-            if (TextUtils.equals(lastPhrase, phrase)) {
-                // We shouldn't repeat ourselves
+            if (phrase == null) {
                 continue;
             }
 
+            phrase = phrase.toString().trim();
             if (TextUtils.isEmpty(phrase)) {
                 // Nothing to see here, never mind
+                continue;
+            }
+
+            if (TextUtils.equals(lastPhrase, phrase)) {
+                // We shouldn't repeat ourselves
                 continue;
             }
 
