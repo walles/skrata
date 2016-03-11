@@ -110,7 +110,8 @@ public class MainActivityFragment extends Fragment implements TextWatcher {
 
             // FIXME: Add error handling
             Log.i(TAG, "Speaking: <" + phrase + ">");
-            textToSpeech.speak(phrase, queueMode, null, null);
+            // Use deprecated call to support API level 19 (which the kids' tablets are on)
+            textToSpeech.speak(phrase.toString(), queueMode, null);
 
             lastPhrase = phrase;
             queueMode = TextToSpeech.QUEUE_ADD;
