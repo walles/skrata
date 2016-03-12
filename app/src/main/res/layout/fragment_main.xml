@@ -15,6 +15,6 @@
         android:layout_height="match_parent"
         android:textSize="40sp"
         android:inputType="textCapSentences"
-        android:hint="Skriv här"/>
+        android:hint="@string/editTextHint"/>
 
 </RelativeLayout>
