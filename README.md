@@ -9,6 +9,7 @@ The name is a combination of the Swedish word for write ("skriv") and talk ("pra
 
 # TODO before going public
 * Try it on Malva and see how it flies
+* Add buttons for sending the text as a search string to Youtube
 * Get feedback from at least one external beta tester
 * Add a way to switch between installed TTS languages.
 * Add some sort of hint about how to install additional languages.
