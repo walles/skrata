@@ -14,7 +14,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:textSize="40sp"
-        android:inputType="textCapSentences"
+        android:inputType="textCapSentences|textMultiLine"
         android:hint="@string/editTextHint"/>
 
 </RelativeLayout>
