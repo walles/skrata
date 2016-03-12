@@ -1,12 +1,17 @@
 package com.gmail.walles.johan.skrata;
 
+import android.app.SearchManager;
+import android.content.Intent;
 import android.os.Bundle;
+import android.support.v4.view.MenuItemCompat;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.ShareActionProvider;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
 public class MainActivity extends AppCompatActivity {
+    private Intent shareIntent;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,7 +25,26 @@ public class MainActivity extends AppCompatActivity {
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_main, menu);
+
+        MenuItem share = menu.findItem(R.id.menu_item_share);
+
+        ShareActionProvider shareActionProvider = new ShareActionProvider(this);
+        MenuItemCompat.setActionProvider(share, shareActionProvider);
+
+        shareIntent = new Intent(Intent.ACTION_SEARCH);
+        shareActionProvider.setShareIntent(shareIntent);
+
         return true;
+    }
+
+    public void setSearchString(CharSequence searchString) {
+        if (shareIntent == null) {
+            return;
+        }
+
+        // FIXME: Disable on empty search string?
+
+        shareIntent.putExtra(SearchManager.QUERY, searchString.toString());
     }
 
     @Override

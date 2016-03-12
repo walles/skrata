@@ -3,6 +3,12 @@
       xmlns:tools="http://schemas.android.com/tools"
       tools:context="com.gmail.walles.johan.skrata.MainActivity">
     <item
+        android:id="@+id/menu_item_share"
+        app:showAsAction="ifRoom"
+        android:title="@string/abc_searchview_description_search"
+        android:actionProviderClass=
+            "android.widget.ShareActionProvider" />
+    <item
         android:id="@+id/action_settings"
         android:orderInCategory="100"
         android:title="@string/action_settings"

@@ -9,7 +9,6 @@ The name is a combination of the Swedish word for write ("skriv") and talk ("pra
 
 # TODO before going public
 * Try it on Malva and see how it flies
-* Add buttons for sending the text as a search string to Youtube
 * Get feedback from at least one external beta tester
 * Add a way to switch between installed TTS languages.
 * Add some sort of hint about how to install additional languages.
@@ -19,3 +18,5 @@ The name is a combination of the Swedish word for write ("skriv") and talk ("pra
 * Remove the mail button. It's from a template and has no business being there.
 * Make the text size larger
 * Replace "Skriv här" with "Type here", make it translatable and translate it into Swedish
+* Add buttons for sending the text as a search string to Youtube. We send to everything that
+supports search intents.
