@@ -42,7 +42,9 @@ public class MainActivity extends AppCompatActivity {
             return;
         }
 
-        // FIXME: Disable on empty search string?
+        // FIXME: Disable on empty search string? I tried to do that using
+        // menuItem.setEnabled(false), but I didn't see any effect from that:
+        // https://code.google.com/p/android/issues/detail?id=82318
 
         shareIntent.putExtra(SearchManager.QUERY, searchString.toString());
     }
